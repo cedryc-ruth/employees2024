@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des employés{% endblock %}
+
+{% block body %}
+<h2>{{ employee.firstname }} {{ employee.lastname }}</h2>
+
+<p>{{ employee.demands|length }} demandes.</p>
+
+<ul>
+{% for demand in employee.demands %}
+    <li>{{ demand.type }} : {{ demand.about }} - {{ demand.status }}</li>
+{% endfor %}
+</ul>
+
+<ul>
+{-- for salary in employee.salaries --}
+    <li>{-- salary.salary --} ({-- salary.fromdate --} - {-- salary.todate --})</li>
+{-- endfor --}
+</ul>
+
+{% endblock %}
